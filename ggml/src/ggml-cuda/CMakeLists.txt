@@ -60,6 +60,9 @@ if (CUDAToolkit_FOUND)
     ggml_cuda_check_toolkit_architectures("${CUDAToolkit_VERSION}" "${CMAKE_CUDA_ARCHITECTURES}")
     enable_language(CUDA)
 
+    set(CMAKE_CUDA_STANDARD 17)
+    set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+
     # TODO: Remove once CCCL 3.2 has been released and bundled with CUDA Toolkit
     if (GGML_CUDA_CUB_3DOT2)
         include(FetchContent)
